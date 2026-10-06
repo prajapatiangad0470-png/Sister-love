@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anushka Didi ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #050006;
+    color: white;
+}
+
+/* ================= PAGE 1 ================= */
+
+.page1 {
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(circle, #350018 0%, #100008 50%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 35px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #ffb6d9;
+    text-shadow: 0 0 15px #ff1493;
+}
+
+/* BIG HEART */
+
+.heart-box {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    width: 150px;
+    height: 150px;
+    background: #ff174f;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow:
+        0 0 25px #ff174f,
+        0 0 60px #ff174f,
+        0 0 100px rgba(255,23,79,.7);
+    animation: heartbeat 1.2s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: #ff174f;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -75px;
+    left: 0;
+}
+
+.heart::after {
+    left: 75px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-45deg) scale(1.12);
+    }
+}
+
+/* ARROW */
+
+.arrow {
+    position: absolute;
+    width: 260px;
+    height: 8px;
+    background: white;
+    left: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    opacity: 0;
+    box-shadow: 0 0 15px white;
+}
+
+.arrow::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: -9px;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 25px solid white;
+}
+
+.arrow.shoot {
+    opacity: 1;
+    animation: shootArrow 1.4s forwards;
+}
+
+@keyframes shootArrow {
+    0% {
+        left: -300px;
+    }
+
+    70% {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 115%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* BUTTON */
+
+.enter-btn {
+    margin-top: 80px;
+    padding: 16px 32px;
+    border: 2px solid #ff4f91;
+    border-radius: 50px;
+    background: rgba(255,20,100,.15);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff1493;
+    transition: .3s;
+}
+
+.enter-btn:hover {
+    transform: scale(1.08);
+    background: #ff1767;
+}
+
+/* ================= PAGE 2 ================= */
+
+.page2 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle, #330014, #100006 55%, #000);
+    display: none;
+    overflow: hidden;
+}
+
+.page2.show {
+    display: block;
+}
+
+.heading {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: #ffb0d0;
+    text-shadow:
+        0 0 10px #ff1493,
+        0 0 30px #ff1493;
+    z-index: 10;
+}
+
+/* MESSAGES */
+
+.messages {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.message {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+        0 0 7px #ff1493,
+        0 0 15px #ff1493;
+    animation: floatMessage linear forwards;
+}
+
+@keyframes floatMessage {
+
+    from {
+        transform: translateY(110vh) rotate(-5deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-20vh) rotate(5deg);
+        opacity: 0;
+    }
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart {
+    position: absolute;
+    bottom: -30px;
+    font-size: 25px;
+    animation: floatHeart linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatHeart {
+
+    from {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.bottom {
+    position: absolute;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+    color: #ffb0d0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    z-index: 20;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<section class="page1" id="page1">
+
+    <div class="title">
+        MADE WITH LOVE FOR ANUSHKA DIDI ❤️
+    </div>
+
+    <div class="heart-box">
+
+        <div class="heart"></div>
+
+        <div class="arrow" id="arrow"></div>
+
+    </div>
+
+    <button class="enter-btn" onclick="enterHeart()">
+        ENTER TO ANUSHKA DIDI'S HEART ❤️
+    </button>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page2" id="page2">
+
+    <div class="heading">
+        ❤️ ANUSHKA DIDI ❤️
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <div class="bottom">
+        BEST SISTER EVER — ANUSHKA DIDI ❤️
+    </div>
+
+</section>
+
+
+<script>
+
+const messages = [
+
+    "ANUSHKA DIDI ❤️",
+    "LOVE YOU ANUSHKA DIDI ❤️",
+    "BEST DIDI ANUSHKA DIDI 🥰",
+    "ANUSHKA DIDI YOU ARE THE BEST ✨",
+    "MERI PYARI ANUSHKA DIDI ❤️",
+    "ANUSHKA DIDI MERI BEST SISTER 👑",
+    "ANUSHKA DIDI YOU ARE AMAZING 💕",
+    "ANUSHKA DIDI FOREVER ❤️",
+    "LOTS OF LOVE ANUSHKA DIDI 💖",
+    "ANUSHKA DIDI YOU ARE SPECIAL ✨",
+    "WORLD'S BEST ANUSHKA DIDI 🌎❤️",
+    "ANUSHKA DIDI MERI FAVOURITE DIDI 🥰",
+    "THANK YOU ANUSHKA DIDI ❤️",
+    "ANUSHKA DIDI ALWAYS SMILE 😊❤️",
+    "ANUSHKA DIDI KEEP SHINING ✨",
+    "ANUSHKA DIDI YOU ARE AWESOME 🔥",
+    "BEST BEST BEST — ANUSHKA DIDI ❤️",
+    "ANUSHKA DIDI MERI SUPERSTAR ⭐",
+    "ANUSHKA DIDI ROCKS 😎❤️",
+    "ANUSHKA DIDI MY SPECIAL DIDI 💕",
+    "HAPPY ALWAYS ANUSHKA DIDI 🌸",
+    "ANUSHKA DIDI YOU ARE PRECIOUS 💎",
+    "BIG HUG FOR ANUSHKA DIDI 🤗❤️",
+    "ANUSHKA DIDI NEVER CHANGE ❤️",
+    "RESPECT FOR ANUSHKA DIDI 👑",
+    "ANUSHKA DIDI YOU ARE BEAUTIFUL ❤️",
+    "ANUSHKA DIDI BEST SISTER EVER 🫶",
+    "SO MUCH LOVE FOR ANUSHKA DIDI 💕",
+    "ANUSHKA DIDI MY FAVOURITE ❤️",
+    "FOREVER BEST — ANUSHKA DIDI ♾️❤️"
+
+];
+
+
+/* ENTER */
+
+function enterHeart() {
+
+    const arrow = document.getElementById("arrow");
+
+    arrow.classList.add("shoot");
+
+    setTimeout(() => {
+
+        document.getElementById("page1").style.display = "none";
+
+        document.getElementById("page2").classList.add("show");
+
+        startMessages();
+        startHearts();
+
+    }, 1250);
+}
+
+
+/* MESSAGE CREATOR */
+
+function createMessage() {
+
+    const container =
+        document.getElementById("messages");
+
+    const message =
+        document.createElement("div");
+
+    message.className = "message";
+
+    message.innerText =
+        messages[
+            Math.floor(Math.random() * messages.length)
+        ];
+
+    message.style.left =
+        Math.random() * 80 + "%";
+
+    message.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    message.style.fontSize =
+        (15 + Math.random() * 10) + "px";
+
+    container.appendChild(message);
+
+    setTimeout(() => {
+        message.remove();
+    }, 10000);
+}
+
+
+/* MESSAGE SPAM */
+
+function startMessages() {
+
+    setInterval(() => {
+
+        createMessage();
+
+        if (Math.random() > .4) {
+            setTimeout(createMessage, 250);
+        }
+
+        if (Math.random() > .6) {
+            setTimeout(createMessage, 500);
+        }
+
+    }, 450);
+}
+
+
+/* FLOATING HEARTS */
+
+function startHearts() {
+
+    setInterval(() => {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        heart.innerText =
+            ["❤️","💕","💖","💗","💝","✨","🌸"]
+            [Math.floor(Math.random() * 7)];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 5) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 9000);
+
+    }, 500);
+}
+
+</script>
+
+</body>
+  </html>
